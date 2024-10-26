@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mee Vibing.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #c8a77f;
+        }
+
+        :root {
+            --main-color: #f1d4a2;
+            --second-color: black;
+        }
+
+        .navbar-custom {
+            background-color: var(--second-color);
+            padding: 20px 9%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+            /* */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-brand span {
+            color: var(--main-color);
+            font-weight: 900;
+            text-shadow: 0 0 20px var(--main-color);
+        }
+
+        .nav-item .btn {
+            background-color: var(--main-color);
+        }
+
+        .nav-item a {
+            color: var(--second-color);
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: yellow; 
+            text-decoration: underline; 
+        }
+
+        .main-container {
+            margin-top: 17vh ;
+        }
+        .hero-container {
+            margin-bottom: 27vh;
+            height: 61vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro-text {
+            padding: 0 15%;
+        }
+
+        .intro-text .second-color {
+            color: var(--second-color);
+        }
+
+        .image-grid {
+            padding: 0 7%;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 30vh;
+        }
+
+        .image-grid .col-4:nth-of-type(2) img {
+            border-radius: 20px;
+        }
+
+
+        .carousel {
+            margin-bottom: 15vh;
+        }
+
+        i {
+            font-size: 100px;
+            color: var(--second-color);
+        }
+
+        .carousel-item img {
+            width: 86%;
+            height: 80vh;
+            opacity: 0.8;
+        }
+
+        .carousel-indicators img {
+            width: 70px;
+            height: 5vh;
+            display: block;
+        }
+
+        .carousel-indicators button {
+            width: max-content!important;
+        }
+
+        .carousel-indicators {
+            position: unset;
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            background-color: var(--second-color);
+            height: 5vh;
+            width: 3vw;
+            top: 60%;
+            border-radius: 10px;
+        }
+
+        .carousel-control-prev {
+            left: 10%;
+        }
+
+        .carousel-control-next {
+            right: 10%;
+        }
+
+        .about {
+            margin-bottom: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1d4a216;
+        }
+
+        .sticky-container {
+            position: sticky;
+            top: 20px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+        }
+
+        .about-text img {
+            border-radius: 100%;
+            width: 50%;
+            height: 30vh;
+            margin-bottom: 10px; 
+        }
+
+        .about-image {
+            width: 50%;
+            height: 100%;
+        }
+
+        .company-image {
+            max-width: 250px;
+        }
+
+        .about-text p {
+            text-align: justify;
+            letter-spacing: 1px;
+        }
+
+        .about-text {
+            padding: 0 10% 0 10%;
+            border-radius: 20px;
+            width: 70%;
+        }
+
+        @media (min-width: 480px) and (max-width: 1380px){
+            .navbar-custom {
+                margin-bottom: 8vh;
+            }
+
+            .image-grid {
+                padding: 0;
+            }
+
+            .image-grid img {
+                height: 12vh;
+            }
+
+            .carousel-item img {
+                width: 100%;
+                height: 35vh;
+            }
+
+            .carousel-caption h5{
+                font-size: 20px !important;
+            }
+
+            .carousel-caption p {
+                font-size: 10px !important
+            }
+
+            .carousel-control-next, .carousel-control-prev {
+                top: 70%;
+                width: 20px;
+                border-radius: 0px;
+            }
+
+            .carousel-control-next {
+                right: 5px;
+            }
+
+            .carousel-control-prev{
+                left: 5px;
+            }
+
+            .sticky-container {
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
+            }
+
+            .about-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .about-text {
+            width: 80%;
+            padding: 0 5% 0 5%;
+            border-radius: 10px;
+        }
+
+        .about-text img {
+            height: 30vh;
+            width: 100%;
+            border-radius: 10px !important;
+        }
+
+
+        }
+
+        .card {
+            transition: transform 0.2s; 
+            background-color: var(--second-color);
+            padding: 15% 10% 15% 10%;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 80%;
+            border-radius: 100%;
+            height: 27vh;
+        }
+
+        .card:hover {
+            transform: scale(1.05); 
+        }
+
+        .card-body {
+            padding: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .subscribe h2, .subscribe h3 {
+            color: var(--second-color);
+        }
+
+        .btn-primary {
+            background-color: #303f4f; 
+            border: none;
+        }
+
+        .footer {
+            background-color: var(--second-color);
+        }
+
+        .footer i {
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px); 
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); 
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="container-fluid navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-light fs-3" href="index.html">Mee <span>Vibing.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn" href="#subscribe" role="button">Subscribe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main-container text-center p-5 fade-in-section" id="home">
+        <div class="hero-container">
+            <img src="images/logo.png" alt="Logo" class="mb-4" style="max-width: 250px;">
+
+            <div class="mb-4 intro-text">
+                <h2 class="fw-bold fs-1 mb-3">Welcome Mee Pals!</h2>
+                <h3 class="fs-4 mb-4">
+                    <span class="second-color">trends</span>
+                    <span class="mx-2">|</span>
+                    <span class="second-color">wellness</span>
+                    <span class="mx-2">|</span>
+                    <span class="second-color">fashion</span>
+                </h3>
+                <p class="fs-6 mb-4">
+                    Lifestyle is all about finding balance, embracing health, and living
+                    in the moment. Whether you're into fitness, mindfulness, or just
+                    looking to elevate your daily routines, you've come to the right
+                    place.
+                </p>
+            </div>
+
+            <div class="row image-grid"> 
+                <div class="col-4"> 
+                    <img src="https://images.unsplash.com/photo-1507919909716-c8262e491cde?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Image 1" class="img-fluid">
+                </div>
+                <div class="col-4">
+                    <img src="https://images.unsplash.com/photo-1556760544-74068565f05c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Image 2" class="img-fluid">
+                </div>
+                <div class="col-4">
+                    <img src="https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Image 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel fade-in-section" id="carouselDemo" data-bs-wrap="true" data-bs-slide="carousel">
+            <i class="fas fa-shopping-cart mb-4"></i>
+            
+            <div class="mb-4 intro-text">
+                <h2 class="fw-bold fs-1 mb-3">Huge Savings Await!</h2>
+                <p class="fs-6 mb-5">
+                    Up to 70% off available 2 days after you subscribe - limits of 3 items per day!
+                </p>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="/images/carousel1.png">
+                    <div class="carousel-caption">
+                        <h5 class="fs-3 fw-bold">Cozy Up with Our Stylish Sweaters</h5>
+                        <p>Discover our collection of sweaters that combine comfort and style. Made from high-quality materials, our sweaters are
+                        designed to keep you warm without compromising on fashion.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="/images/carousel2.png">
+                    <div class="carousel-caption">
+                        <h5 class="fs-3 fw-bold">Stay Warm with Our Winter Coats</h5>
+                        <p>Embrace the chill with our selection of winter coats. Crafted to provide exceptional warmth and protection against the
+                        elements, these coats feature insulated linings and stylish designs.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/images/carousel3.png">
+                    <div class="carousel-caption">
+                        <h5 class="fs-3 fw-bold">Elevate Your Style with Our Men's Accessories</h5>
+                        <p>Accessorize like a pro with our range of men's accessories. From classic watches to sleek belts and sophisticated
+                        scarves, each item is designed to enhance your look.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselDemo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+            <div class="carousel-indicators">
+                <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0">
+                    <img src="images/carousel1.png" />
+                </button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1">
+                    <img src="images/carousel2.png" />
+                </button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2">
+                    <img src="images/carousel3.png" />
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about p-5 fade-in-section" id="about">
+        <i class="fas fa-info-circle mb-4"></i>
+    
+        <div class="intro-text mb-4 text-center">
+            <h2 class="fw-bold fs-1 mb-3">About Us</h2>
+            <p class="fs-6 mb-5">
+                Discover our mission, values, and the story behind our brand.
+            </p>
+        </div>
+    
+
+        <div class="about-content">
+            <div class="about-text text-start">
+                <div class="mb-5 text-center">
+                    <img src="images/founder.png" alt="Founder Image" class="img-fluid rounded-circle">
+                    <h5 class="fw-bold mt-3">Brenda Nathaniel</h5> 
+                    <p class="text-muted text-center">Founder & CEO</p>
+                </div>
+
+                <div class="mb-5">
+                    <h4 class="fw-bold">Mission</h4>
+                    <p class="text-muted">
+                        Our mission at Mee Vibings is to inspire a lifestyle of positivity, creativity, and well-being by designing products
+                        that seamlessly blend functionality with aesthetic appeal. We believe that lifestyle products should not only serve a
+                        purpose but also bring a sense of joy and inspiration to everyday moments. With a deep commitment to quality and
+                        sustainability, we strive to create items that enhance life's experiences, offering our customers a way to express their
+                        individuality while respecting the planet.
+                    </p>
+                </div>
+    
+                <div class="mb-5">
+                    <h4 class="fw-bold">Values</h4>
+                    <p class="text-muted">
+                        We innovate with a passion for design, bringing fresh perspectives to our lifestyle collections.
+                        We are committed to providing high-quality products that enhance the lives of our customers.
+                        We believe in responsible production, minimizing our impact on the planet for future generations.
+                    </p>
+                </div>
+    
+                <div class="mb-5">
+                    <h4 class="fw-bold">Our Story</h4>
+                    <p class="text-muted">
+                        Mee Vibings was born out of a desire to redefine lifestyle essentials by combining creativity with sustainability. Since
+                        our founding, we've focused on creating products that aren't just functional but bring a sense of joy and style to
+                        everyday life. Headquartered in the heart of New York, our journey has been guided by a passion for quality, innovation,
+                        and a commitment to our community and the environment.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="about-image d-flex flex-column align-items-center sticky-container">
+                <img src="images/company-image.png" alt="Company Image" class="img-fluid mb-3 rounded company-image">
+                <div class="company-info mt-3">
+                    <p class="fw-bold mb-1">Established: January 1, 2005</p>
+                    <p class="text-muted mb-0 text-center">Location: New York, USA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact p-5 fade-in-section" id="contact">
+        <div class="intro-text mb-4 text-center">
+            <i class="fas fa-user mb-4"></i>
+            <h2 class="fw-bold fs-1 mb-3">Get in Touch</h2>
+            <p class="fs-6 mb-5">
+                We'd love to hear from you! Reach out with any questions or feedback.
+            </p>
+        </div>
+    
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/contact1.png" alt="Contact 1" class="card-img-top mx-auto">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-5 text-light">Lucia Zenaya</h5>
+                            <p class="card-text text-light fs-6">Customer Support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/contact2.png" alt="Contact 2" class="card-img-top mx-auto">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-5 text-light">Freya Atkinson</h5>
+                            <p class="card-text text-light fs-6">Sales Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/contact3.png" alt="Contact 3" class="card-img-top mx-auto">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-5 text-light">Theo Kimberly</h5>
+                            <p class="card-text text-light fs-6">Marketing Specialist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="text-center mt-4">
+                <a href="mailto:info@meevibings.com" class="btn btn-primary btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section aria-label="Subscribe example" class="py-5 fade-in-section" id="subscribe">
+        <div class="container-fluid">
+            <article class="text-center text-light subscribe">
+                <hgroup>
+                    <h2 class="fw-bold mb-3">Join Our Community</h2>
+                    <h3 class="fs-6">Subscribe for more product and lattest updates</h3>
+                </hgroup>
+                <form class="row g-3 justify-content-center mt-4">
+                    <div class="col-md-4">
+                        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name"
+                            aria-label="First Name" required
+                            style="background-color: var(--main-color); border: 2px solid black;" />
+                    </div>
+                    <div class="col-md-4">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email"
+                            aria-label="Email" required style="background-color: var(--main-color); border: 2px solid black;" />
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary" onclick="event.preventDefault()"
+                            style="background-color: #34c759; border: none;">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </section>
+
+
+    <div class="text-light text-center py-2 footer">
+            <p class="mb-4">
+                &copy; 2024 Mee Vibings. All rights reserved.
+            </p>
+            <a href="#" class="text-primary mx-4" aria-label="Instagram">
+                <i class="fab fa-instagram fs-4"></i>
+            </a>
+            <a href="#" class="text-primary mx-4" aria-label="Facebook">
+                <i class="fab fa-facebook-f fs-4"></i>
+            </a>
+            <a href="#" class="text-primary mx-4" aria-label="Twitter">
+                <i class="fab fa-twitter fs-4"></i>
+            </a>
+            </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.nav-link').on('click', function () {
+                $('.nav-link').removeClass('active'); 
+                $(this).addClass('active'); 
+            });
+        });
+    </script>
+    <script>
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+        const options = {
+            root: null, 
+            rootMargin: '0px',
+            threshold: 0.1 
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in'); 
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, options);
+
+        fadeInSections.forEach(section => {
+            observer.observe(section); 
+        });
+    </script>
+</body>
+
+</html>
